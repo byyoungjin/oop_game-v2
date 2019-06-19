@@ -21,10 +21,19 @@
      });
    }
 
+/**
+ * check whether the pickedLetter on the phrase
+ * @param  {string} pickedLetter
+ * @return {boolean}              [if it is on the phrase return 1, if not 0]
+ */
    checkLetter(pickedLetter){
-     return this.phrase.indexOf(pickedLetter);
+     return this.phrase.indexOf(pickedLetter) >-1 ;
    }
 
+/**
+ * show the matched letter on the screen
+ * @param  {string} pickedLetter 
+ */
    showMatchedLetter(pickedLetter){
      $(`.${pickedLetter}`).attr("class",`show letter ${pickedLetter}`);
    }
