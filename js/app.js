@@ -6,7 +6,9 @@ game= new Game();
 
  $('#btn__reset').click(()=>{
    game= new Game();
+   game.ready = true;
    game.startGame();
+
  });
 
 $('.keyrow button.key').click((e)=>{
@@ -14,6 +16,7 @@ $('.keyrow button.key').click((e)=>{
 });
 
 $('body').keyup((e)=>{
-  game.handleINteractionWithKeboard(e.key);
-
+  if(game.ready ===true){
+    game.handleINteractionWithKeboard(e.key);
+  }
 })
